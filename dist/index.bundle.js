@@ -90,11 +90,11 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sum_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sum.js */ \"./src/sum.js\");\n\r\n\r\nconsole.log('sum(23, 24)=', Object(_sum_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(23, 24))\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\nvar _sum = __webpack_require__(/*! ./sum.js */ \"./src/sum.js\");\n\nvar _sum2 = _interopRequireDefault(_sum);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconsole.log('sum(23, 24)=', (0, _sum2.default)(23, 24));\n\nvar func = function func() {};\nvar Num = 45;\nvar arr = [1, 2, 4];\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -102,11 +102,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sum
 /*!********************!*\
   !*** ./src/sum.js ***!
   \********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (function(a, b) {\n    return a + b\n});\n\n\n//# sourceURL=webpack:///./src/sum.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nexports.default = function (a, b) {\n    return a + b;\n};\n\n//# sourceURL=webpack:///./src/sum.js?");
 
 /***/ })
 
