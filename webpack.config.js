@@ -9,23 +9,29 @@ module.exports = {
         path: path.join(__dirname, 'dist')
     },
     module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /(node_modules)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            ['@babel/preset-env', {
-                                targets: {
-                                    browsers: ['> 1%', 'last 2 versions']
-                                }
-                            }]
-                        ]
-                    }
+        rules: [{
+            test: /\.js$/,
+            exclude: /(node_modules)/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: [
+                        ['@babel/preset-env', {
+                            targets: {
+                                browsers: ['> 1%', 'last 2 versions']
+                            }
+                        }]
+                    ],
+                    plugins: [
+                        ["@babel/plugin-transform-runtime", {
+                            "corejs": false,
+                            "helpers": true,
+                            "regenerator": true,
+                            "useESModules": false
+                        }]
+                    ]
                 }
             }
-        ]
+        }]
     }
 }
