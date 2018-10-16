@@ -7,18 +7,12 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.join(__dirname, 'dist')
+        path: path.join(__dirname, 'dist'),
+        chunkFilename: '[name].chunk.js'
     },
     optimization: {
         splitChunks: {
-            chunks: 'async',
-            minSize: 1,
-            minChunks: 1,
-            maxAsyncRequests: 5,
-            maxInitialRequests: 3,
-            automaticNameDelimiter: '~',
-            name: true,
-            cacheGroups: {}
+            chunks: 'all'
         }
     }
 }
