@@ -49,7 +49,7 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        page: './src/page.js'
+        page2: './src/page2.js'
     },
     output: {
         filename: '[name].bundle.js',
