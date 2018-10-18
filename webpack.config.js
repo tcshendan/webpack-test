@@ -1,5 +1,22 @@
 const path = require('path');
 
+// module.exports = {
+//     entry: {
+//         pageA: './src/pageA.js',
+//         pageB: './src/pageB.js'
+//     },
+//     output: {
+//         filename: '[name].bundle.js',
+//         path: path.join(__dirname, 'dist'),
+//         chunkFilename: '[name].chunk.js'
+//     },
+//     optimization: {
+//         splitChunks: {
+//             chunks: 'all'
+//         }
+//     }
+// }
+
 module.exports = {
     entry: {
         pageA: './src/pageA.js',
@@ -12,7 +29,20 @@ module.exports = {
     },
     optimization: {
         splitChunks: {
-            chunks: 'all'
+            cacheGroups: {
+                common: {
+                    name: 'common',
+                    chunks: 'all',
+                    minSize: 1,
+                    priority: 0
+                },
+                vendor: {
+                    name: 'vendor',
+                    test: /[\\/]node_modules[\\/]/,
+                    chunks: 'all',
+                    priority: 10
+                }
+            }
         }
     }
 }
