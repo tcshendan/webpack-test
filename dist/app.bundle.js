@@ -97,25 +97,36 @@ eval("module.exports = function(css) {\r\n    console.log(css)\r\n    console.lo
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./src/css/base.css":
-/*!**************************************************************!*\
-  !*** ./node_modules/css-loader??ref--5-1!./src/css/base.css ***!
-  \**************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/less-loader/dist/cjs.js!./src/css/base.less":
+/*!******************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/less-loader/dist/cjs.js!./src/css/base.less ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\nexports.i(__webpack_require__(/*! -!../../node_modules/css-loader??ref--5-1!./common.css */ \"./node_modules/css-loader/index.js?!./src/css/common.css\"), undefined);\n\n// module\nexports.push([module.i, \"html {\\r\\n    background-color: red;\\r\\n}\\r\\n\\r\\n.src-css-base_box_REzyU {\\r\\n    height: 200px;\\r\\n    height: 200px;\\r\\n    border-radius: 4px;\\r\\n    background: #333;\\r\\n}\\r\\n\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"box\": \"src-css-base_box_REzyU \" + __webpack_require__(/*! -!../../node_modules/css-loader??ref--5-1!./common.css */ \"./node_modules/css-loader/index.js?!./src/css/common.css\").locals[\"bigBox\"] + \"\"\n};\n\n//# sourceURL=webpack:///./src/css/base.css?./node_modules/css-loader??ref--5-1");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\nexports.i(__webpack_require__(/*! -!../../node_modules/css-loader??ref--5-1!./common.less */ \"./node_modules/css-loader/index.js?!./src/css/common.less\"), undefined);\n\n// module\nexports.push([module.i, \"html {\\n  background-color: #ff3333;\\n}\\n.src-css-base_box_3WjJS {\\n  height: 200px;\\n  border-radius: 4px;\\n  background: #333;\\n}\\n\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"box\": \"src-css-base_box_3WjJS \" + __webpack_require__(/*! -!../../node_modules/css-loader??ref--5-1!./common.less */ \"./node_modules/css-loader/index.js?!./src/css/common.less\").locals[\"bigBox\"] + \"\"\n};\n\n//# sourceURL=webpack:///./src/css/base.less?./node_modules/css-loader??ref--5-1!./node_modules/less-loader/dist/cjs.js");
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./src/css/common.css":
-/*!****************************************************************!*\
-  !*** ./node_modules/css-loader??ref--5-1!./src/css/common.css ***!
-  \****************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/less-loader/dist/cjs.js!./src/css/common.less":
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/less-loader/dist/cjs.js!./src/css/common.less ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"body {\\r\\n    font-size: 20px;\\r\\n}\\r\\n\\r\\n.src-css-common_bigBox_27sNb {\\r\\n    border: 2px solid #000;\\r\\n}\\r\\n\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"bigBox\": \"src-css-common_bigBox_27sNb\"\n};\n\n//# sourceURL=webpack:///./src/css/common.css?./node_modules/css-loader??ref--5-1");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"body {\\n  font-size: 20px;\\n}\\n.src-css-common_bigBox_PK_Jy {\\n  border: 2px solid #000;\\n}\\n\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"bigBox\": \"src-css-common_bigBox_PK_Jy\"\n};\n\n//# sourceURL=webpack:///./src/css/common.less?./node_modules/css-loader??ref--5-1!./node_modules/less-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./src/css/common.less":
+/*!*****************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./src/css/common.less ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"body {\\r\\n    font-size: 20px;\\r\\n}\\r\\n\\r\\n.src-css-common_bigBox_PK_Jy {\\r\\n    border: 2px solid #000;\\r\\n}\\r\\n\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"bigBox\": \"src-css-common_bigBox_PK_Jy\"\n};\n\n//# sourceURL=webpack:///./src/css/common.less?./node_modules/css-loader??ref--5-1");
 
 /***/ }),
 
@@ -160,29 +171,29 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_base_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/base.css */ \"./src/css/base.css\");\n/* harmony import */ var _css_base_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_base_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/common.css */ \"./src/css/common.css\");\n/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_common_css__WEBPACK_IMPORTED_MODULE_1__);\n//import \"./css/base.css\"\n\n\nvar app = document.getElementById('app');\napp.innerHTML = '<div class=\"' + _css_base_css__WEBPACK_IMPORTED_MODULE_0___default.a.box + '\"></div>'; // var flag = false\n//\n// setInterval(function() {\n//     if (flag) {\n//         base.unuse()\n//     } else {\n//         base.use()\n//     }\n//     flag = !flag;\n// }, 500)\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_base_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/base.less */ \"./src/css/base.less\");\n/* harmony import */ var _css_base_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_base_less__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _css_common_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/common.less */ \"./src/css/common.less\");\n/* harmony import */ var _css_common_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_common_less__WEBPACK_IMPORTED_MODULE_1__);\n//import \"./css/base.css\"\n\n\nvar app = document.getElementById('app');\napp.innerHTML = '<div class=\"' + _css_base_less__WEBPACK_IMPORTED_MODULE_0___default.a.box + '\"></div>'; // var flag = false\n//\n// setInterval(function() {\n//     if (flag) {\n//         base.unuse()\n//     } else {\n//         base.use()\n//     }\n//     flag = !flag;\n// }, 500)\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
-/***/ "./src/css/base.css":
-/*!**************************!*\
-  !*** ./src/css/base.css ***!
-  \**************************/
+/***/ "./src/css/base.less":
+/*!***************************!*\
+  !*** ./src/css/base.less ***!
+  \***************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader??ref--5-1!./base.css */ \"./node_modules/css-loader/index.js?!./src/css/base.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\ntransform = __webpack_require__(/*! ../../css.transform.js */ \"./css.transform.js\");\n\nvar options = {\"singleton\":true,\"transform\":\"./css.transform.js\",\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/css/base.css?");
+eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader??ref--5-1!../../node_modules/less-loader/dist/cjs.js!./base.less */ \"./node_modules/css-loader/index.js?!./node_modules/less-loader/dist/cjs.js!./src/css/base.less\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\ntransform = __webpack_require__(/*! ../../css.transform.js */ \"./css.transform.js\");\n\nvar options = {\"singleton\":true,\"transform\":\"./css.transform.js\",\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/css/base.less?");
 
 /***/ }),
 
-/***/ "./src/css/common.css":
-/*!****************************!*\
-  !*** ./src/css/common.css ***!
-  \****************************/
+/***/ "./src/css/common.less":
+/*!*****************************!*\
+  !*** ./src/css/common.less ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader??ref--5-1!./common.css */ \"./node_modules/css-loader/index.js?!./src/css/common.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\ntransform = __webpack_require__(/*! ../../css.transform.js */ \"./css.transform.js\");\n\nvar options = {\"singleton\":true,\"transform\":\"./css.transform.js\",\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/css/common.css?");
+eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader??ref--5-1!../../node_modules/less-loader/dist/cjs.js!./common.less */ \"./node_modules/css-loader/index.js?!./node_modules/less-loader/dist/cjs.js!./src/css/common.less\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\ntransform = __webpack_require__(/*! ../../css.transform.js */ \"./css.transform.js\");\n\nvar options = {\"singleton\":true,\"transform\":\"./css.transform.js\",\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/css/common.less?");
 
 /***/ })
 
