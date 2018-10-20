@@ -86,6 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./css.transform.js":
+/*!**************************!*\
+  !*** ./css.transform.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = function(css) {\r\n    console.log(css)\r\n    console.log(window.innerWidth)\r\n    if (window.innerWidth >= 768) {\r\n        return css.replace('red', 'green')\r\n    } else {\r\n        return css.replace('red', 'orange')\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack:///./css.transform.js?");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./src/css/base.css":
 /*!****************************************************!*\
   !*** ./node_modules/css-loader!./src/css/base.css ***!
@@ -94,6 +105,17 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"html {\\r\\n  background-color: red;\\r\\n}\\r\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/css/base.css?./node_modules/css-loader");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./src/css/common.css":
+/*!******************************************************!*\
+  !*** ./node_modules/css-loader!./src/css/common.css ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"body {\\r\\n  font-size: 20px;\\r\\n}\\r\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/css/common.css?./node_modules/css-loader");
 
 /***/ }),
 
@@ -138,7 +160,7 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_base_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/base.css */ \"./src/css/base.css\");\n/* harmony import */ var _css_base_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_base_css__WEBPACK_IMPORTED_MODULE_0__);\n//import \"./css/base.css\"\n\nvar flag = false;\nsetInterval(function () {\n  if (flag) {\n    _css_base_css__WEBPACK_IMPORTED_MODULE_0___default.a.unuse();\n  } else {\n    _css_base_css__WEBPACK_IMPORTED_MODULE_0___default.a.use();\n  }\n\n  flag = !flag;\n}, 500);\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_base_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/base.css */ \"./src/css/base.css\");\n/* harmony import */ var _css_base_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_base_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/common.css */ \"./src/css/common.css\");\n/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_common_css__WEBPACK_IMPORTED_MODULE_1__);\n//import \"./css/base.css\"\n\n // var flag = false\n//\n// setInterval(function() {\n//     if (flag) {\n//         base.unuse()\n//     } else {\n//         base.use()\n//     }\n//     flag = !flag;\n// }, 500)\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
@@ -149,7 +171,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var refs = 0;\nvar dispose;\nvar content = __webpack_require__(/*! !../../node_modules/css-loader!./base.css */ \"./node_modules/css-loader/index.js!./src/css/base.css\");\nvar options = {\"hmr\":true};\noptions.insertInto = undefined;\n\nif(typeof content === 'string') content = [[module.i, content, '']];\nif(content.locals) exports.locals = content.locals;\n\nexports.use = exports.ref = function() {\n\tif(!(refs++)) {\n\t\tdispose = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\t}\n\n\treturn exports;\n};\n\nexports.unuse = exports.unref = function() {\n  if(refs > 0 && !(--refs)) {\n\t   dispose();\n\t\t dispose = null;\n  }\n};\nif(false) { var lastRefs; }\n\n//# sourceURL=webpack:///./src/css/base.css?");
+eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader!./base.css */ \"./node_modules/css-loader/index.js!./src/css/base.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\ntransform = __webpack_require__(/*! ../../css.transform.js */ \"./css.transform.js\");\n\nvar options = {\"insertInto\":\"#app\",\"singleton\":true,\"transform\":\"./css.transform.js\",\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = \"#app\";\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/css/base.css?");
+
+/***/ }),
+
+/***/ "./src/css/common.css":
+/*!****************************!*\
+  !*** ./src/css/common.css ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader!./common.css */ \"./node_modules/css-loader/index.js!./src/css/common.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\ntransform = __webpack_require__(/*! ../../css.transform.js */ \"./css.transform.js\");\n\nvar options = {\"insertInto\":\"#app\",\"singleton\":true,\"transform\":\"./css.transform.js\",\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = \"#app\";\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/css/common.css?");
 
 /***/ })
 
