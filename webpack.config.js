@@ -49,7 +49,7 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        page2: './src/page2.js'
+        app: './src/app.js'
     },
     output: {
         filename: '[name].bundle.js',
@@ -59,24 +59,36 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /\.js$/,
-            exclude: /(node_modules)/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    presets: [
-                        ['@babel/preset-env', {
-                            targets: {
-                                browsers: ['> 1%', 'last 2 versions']
-                            }
-                        }]
-                    ],
-                    plugins: [
-                        require('@babel/plugin-transform-runtime'),
-                        require('@babel/plugin-syntax-dynamic-import')
-                    ]
+                test: /\.js$/,
+                exclude: /(node_modules)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            ['@babel/preset-env', {
+                                targets: {
+                                    browsers: ['> 1%', 'last 2 versions']
+                                }
+                            }]
+                        ],
+                        plugins: [
+                            require('@babel/plugin-transform-runtime'),
+                            require('@babel/plugin-syntax-dynamic-import')
+                        ]
+                    }
                 }
+            },
+            {
+                test: /\.css$/,
+                use: [{
+                        loader: 'style-loader/url'
+                    },
+                    {
+                        //loader: 'css-loader'
+                        loader: 'file-loader'
+                    }
+                ]
             }
-        }]
+        ]
     }
 }
