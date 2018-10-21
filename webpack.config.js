@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // module.exports = {
 //     entry: {
@@ -189,6 +190,7 @@ module.exports = {
                 // 压缩选项
                 collapseWhitespace: true
             }
-        })
+        }),
+        new CleanWebpackPlugin(['dist'])
     ]
 }
