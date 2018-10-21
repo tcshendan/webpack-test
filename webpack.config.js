@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // module.exports = {
 //     entry: {
@@ -54,10 +55,9 @@ module.exports = {
         app: './src/app.js'
     },
     output: {
-        filename: '[name].bundle.js',
+        filename: '[name]-[hash:5].bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: __dirname + '/dist/',
-        chunkFilename: '[name].chunk.js'
+        chunkFilename: '[name]-[hash:5].chunk.js'
     },
     resolve: {
         alias: {
@@ -120,6 +120,15 @@ module.exports = {
                 })
             },
             {
+                test: /\.html$/,
+                use: [{
+                    loader: 'html-loader',
+                    options: {
+                        attrs: ['img:src']
+                    }
+                }]
+            },
+            {
                 test: /\.(png|jpg|jpeg|gif)$/,
                 use: [
                     // {
@@ -132,7 +141,7 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            name: "[name].min.[ext]",
+                            name: "[name]-[hash:5].min.[ext]",
                             limit: 2000,
                             publicPath: './assets/imgs/',
                             outputPath: 'assets/imgs/'
@@ -166,11 +175,20 @@ module.exports = {
     },
     plugins: [
         new ExtractTextWebpackPlugin({
-            filename: '[name].min.css',
+            filename: '[name]-[hash:5].min.css',
             allChunks: false
         }),
         new webpack.ProvidePlugin({
             $: 'jquery'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: './index.html',
+            chunks: ['app'], // entry中的app入口才会被打包
+            minify: {
+                // 压缩选项
+                collapseWhitespace: true
+            }
         })
     ]
 }
