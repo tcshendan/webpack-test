@@ -207,7 +207,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_base_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/base.less */ \"./src/css/base.less\");\n/* harmony import */ var _css_base_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_base_less__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _css_common_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/common.less */ \"./src/css/common.less\");\n/* harmony import */ var _css_common_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_common_less__WEBPACK_IMPORTED_MODULE_1__);\n//import \"./css/base.css\"\n\n\nvar app = document.getElementById('app');\napp.innerHTML = '<div class=\"' + _css_base_less__WEBPACK_IMPORTED_MODULE_0___default.a.box + '\"></div>';\n__webpack_require__.e(/*! import() | a */ \"a\").then(__webpack_require__.bind(null, /*! ./components/a */ \"./src/components/a.js\")).then(function (a) {\n  console.log(a);\n}); // var flag = false\n//\n// setInterval(function() {\n//     if (flag) {\n//         base.unuse()\n//     } else {\n//         base.use()\n//     }\n//     flag = !flag;\n// }, 500)\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_base_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/base.less */ \"./src/css/base.less\");\n/* harmony import */ var _css_base_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_base_less__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _css_common_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/common.less */ \"./src/css/common.less\");\n/* harmony import */ var _css_common_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_common_less__WEBPACK_IMPORTED_MODULE_1__);\n//import \"./css/base.css\"\n\n\nvar app = document.getElementById('app'); //app.innerHTML = '<div class=\"' + base.box + '\"></div>';\n\n__webpack_require__.e(/*! import() | a */ \"a\").then(__webpack_require__.bind(null, /*! ./components/a */ \"./src/components/a.js\")).then(function (a) {\n  console.log(a);\n}); // var flag = false\n//\n// setInterval(function() {\n//     if (flag) {\n//         base.unuse()\n//     } else {\n//         base.use()\n//     }\n//     flag = !flag;\n// }, 500)\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
@@ -218,7 +218,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// removed by extract-text-webpack-plugin\nmodule.exports = {\"box\":\"src-css-base_box_3WjJS src-css-common_bigBox_PK_Jy\"};\n\n//# sourceURL=webpack:///./src/css/base.less?");
+eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/css/base.less?");
 
 /***/ }),
 
@@ -229,7 +229,7 @@ eval("// removed by extract-text-webpack-plugin\nmodule.exports = {\"box\":\"src
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// removed by extract-text-webpack-plugin\nmodule.exports = {\"bigBox\":\"src-css-common_bigBox_PK_Jy\"};\n\n//# sourceURL=webpack:///./src/css/common.less?");
+eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/css/common.less?");
 
 /***/ })
 

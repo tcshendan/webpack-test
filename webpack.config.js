@@ -92,8 +92,19 @@ module.exports = {
                     use: [{
                             loader: 'css-loader',
                             options: {
-                                modules: true,
-                                localIdentName: '[path][name]_[local]_[hash:base64:5]'
+                                // modules: true,
+                                // localIdentName: '[path][name]_[local]_[hash:base64:5]'
+                            }
+                        },
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                ident: 'postcss',
+                                plugins: [
+                                    require('postcss-sprites')({
+                                        spritePath: 'dist/assets/imgs/sprites'
+                                    })
+                                ]
                             }
                         },
                         {
@@ -101,6 +112,37 @@ module.exports = {
                         }
                     ]
                 })
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif)$/,
+                use: [
+                    // {
+                    //     loader: 'file-loader',
+                    //     options: {
+                    //         publicPath: './assets/imgs/',
+                    //         outputPath: 'assets/imgs/'
+                    //     }
+                    // }
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            name: "[name].min.[ext]",
+                            limit: 2000,
+                            publicPath: './assets/imgs/',
+                            outputPath: 'assets/imgs/'
+                        }
+                    },
+                    {
+                        loader: 'img-loader',
+                        options: {
+                            plugins: [
+                                require('imagemin-pngquant')({
+                                    quality: '80'
+                                })
+                            ]
+                        }
+                    }
+                ]
             }
         ]
     },

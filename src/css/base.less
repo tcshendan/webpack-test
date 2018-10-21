@@ -5,9 +5,37 @@ html {
 }
 
 .box {
-    composes: bigBox from './common.less';
+    //composes: bigBox from './common.less';
     height: 200px;
-    height: 200px;
+    width: 200px;
     border-radius: 4px;
     background: #333;
+}
+
+.imgBox {
+    height: 100px;
+    width: 400px;
+    border: 1px solid yellow;
+
+    > div {
+        width: 60px;;
+        height: 60px;
+        float: left;
+    }
+
+    .ani1 {
+        background: url('../assets/imgs/1.png') no-repeat;
+    }
+
+    .ani2 {
+        background: url('../assets/imgs/2.png') no-repeat;
+    }
+
+    .ani3 {
+        background: url('../assets/imgs/3.png') no-repeat;
+    }
+
+    .ani4 {
+        background: url('../assets/imgs/4.png') no-repeat;
+    }
 }
