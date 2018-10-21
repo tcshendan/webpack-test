@@ -19,3 +19,7 @@ import ( /* webpackChunkName:'a' */ './components/a').then(function(a) {
 //     }
 //     flag = !flag;
 // }, 500)
+
+$("div").addClass("new")
+
+jQuery("div").addClass("old")

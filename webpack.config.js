@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 // module.exports = {
@@ -57,6 +58,11 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         publicPath: __dirname + '/dist/',
         chunkFilename: '[name].chunk.js'
+    },
+    resolve: {
+        alias: {
+            jquery: path.resolve(__dirname, 'src/libs/jquery.min.js')
+        }
     },
     module: {
         rules: [{
@@ -162,6 +168,9 @@ module.exports = {
         new ExtractTextWebpackPlugin({
             filename: '[name].min.css',
             allChunks: false
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery'
         })
     ]
 }
