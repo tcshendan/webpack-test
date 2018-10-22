@@ -61,8 +61,9 @@ module.exports = {
         chunkFilename: '[name]-[hash:5].chunk.js'
     },
     resolve: {
+        //配置别名
         alias: {
-            jquery: path.resolve(__dirname, 'src/libs/jquery.min.js')
+            jQuery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
         }
     },
     module: {
@@ -180,7 +181,8 @@ module.exports = {
             allChunks: false
         }),
         new webpack.ProvidePlugin({
-            $: 'jquery'
+            $: 'jquery', // npm
+            jQuery: 'jQuery' // 本地Js文件
         }),
         new HtmlWebpackPlugin({
             filename: 'index.html',
