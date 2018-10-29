@@ -60,6 +60,28 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         chunkFilename: '[name]-[hash:5].chunk.js'
     },
+    mode: 'development',
+    devServer: {
+        port: 9001,
+        hot: true,
+        proxy: {
+            // 跨域代理转发
+            '/comments': {
+                target: 'https://m.weibo.cn',
+                changeOrigin: true,
+                logLevel: 'debug'
+            }
+        },
+        historyApiFallback: {
+            // HTML5 history模式
+            rewrites: [
+                {
+                    from: /^\/abc$/,
+                    to: '/'
+                }
+            ]
+        }
+    },
     resolve: {
         //配置别名
         alias: {
@@ -193,6 +215,8 @@ module.exports = {
                 collapseWhitespace: true
             }
         }),
-        new CleanWebpackPlugin(['dist'])
+        new CleanWebpackPlugin(['dist']),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin()
     ]
 }
