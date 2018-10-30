@@ -60,6 +60,9 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         chunkFilename: '[name]-[hash:5].chunk.js'
     },
+    optimization: {
+        minimize: true
+    },
     mode: 'development',
     devServer: {
         port: 9001,
@@ -74,12 +77,10 @@ module.exports = {
         },
         historyApiFallback: {
             // HTML5 history模式
-            rewrites: [
-                {
-                    from: /^\/abc$/,
-                    to: '/'
-                }
-            ]
+            rewrites: [{
+                from: /^\/abc$/,
+                to: '/'
+            }]
         }
     },
     resolve: {
@@ -203,8 +204,7 @@ module.exports = {
             allChunks: false
         }),
         new webpack.ProvidePlugin({
-            $: 'jquery', // npm
-            jQuery: 'jQuery' // 本地Js文件
+            $: 'jquery'
         }),
         new HtmlWebpackPlugin({
             filename: 'index.html',

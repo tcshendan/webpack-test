@@ -4,8 +4,6 @@ import common from './css/common.less'
 
 $("div").addClass("new")
 
-//jQuery("div").addClass("old")
-
 var app = document.getElementById('app');
 //app.innerHTML = '<div class="' + base.box + '"></div>';
 
