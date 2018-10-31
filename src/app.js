@@ -20,7 +20,7 @@ if (module.hot) {
     module.hot.accept()
 }
 
-import ( /* webpackChunkName:'a' */ './components/a').then(function(a) {
+import(/* webpackChunkName:'a' */ './components/a').then(function(a) {
     console.log(a)
 })
 

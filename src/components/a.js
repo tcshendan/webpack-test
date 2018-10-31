@@ -1,1 +1,1 @@
-import "../css/components/a.less"
+import '../css/components/a.less'

@@ -93,22 +93,29 @@ module.exports = {
         rules: [{
                 test: /\.js$/,
                 exclude: /(node_modules)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            ['@babel/preset-env', {
-                                targets: {
-                                    browsers: ['> 1%', 'last 2 versions']
-                                }
-                            }]
-                        ],
-                        plugins: [
-                            require('@babel/plugin-transform-runtime'),
-                            require('@babel/plugin-syntax-dynamic-import')
-                        ]
+                use: [{
+                        loader: 'babel-loader',
+                        options: {
+                            presets: [
+                                ['@babel/preset-env', {
+                                    targets: {
+                                        browsers: ['> 1%', 'last 2 versions']
+                                    }
+                                }]
+                            ],
+                            plugins: [
+                                require('@babel/plugin-transform-runtime'),
+                                require('@babel/plugin-syntax-dynamic-import')
+                            ]
+                        }
+                    },
+                    {
+                        loader: 'eslint-loader',
+                        options: {
+                            formatter: require('eslint-friendly-formatter')
+                        }
                     }
-                }
+                ]
             },
             {
                 test: /\.less$/,
