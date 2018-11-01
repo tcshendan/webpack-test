@@ -67,6 +67,7 @@ module.exports = {
     devServer: {
         port: 9001,
         hot: true,
+        overlay: true,
         proxy: {
             // 跨域代理转发
             '/comments': {

@@ -1,17 +1,17 @@
-//import "./css/base.css"
+// import "./css/base.css"
 import base from './css/base.less'
 import common from './css/common.less'
 
-$("div").addClass("new")
+$('div').addClass('new')
 
-var app = document.getElementById('app');
-//app.innerHTML = '<div class="' + base.box + '"></div>';
+var app = document.getElementById('app')
+// app.innerHTML = '<div class="' + base.box + '"></div>';
 
 $.get('/comments/hotflow', {
     id: '4300473404209484',
     mid: '4300473404209484',
     max_id_type: 0
-}, function(data) {
+}, function (data) {
     console.log(data)
 })
 
@@ -20,7 +20,7 @@ if (module.hot) {
     module.hot.accept()
 }
 
-import(/* webpackChunkName:'a' */ './components/a').then(function(a) {
+import(/* webpackChunkName:'a' */ './components/a').then(function (a) {
     console.log(a)
 })
 

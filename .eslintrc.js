@@ -6,10 +6,12 @@ module.exports = {
     ],
     env: {
         browser: true,
-        node: true
+        node: true,
+        jquery: true
     },
     parser: 'babel-eslint',
     rules: {
-        indent: ['error', 4]
+        indent: ['error', 4],
+        'no-unused-vars': 'off'
     }
 }
