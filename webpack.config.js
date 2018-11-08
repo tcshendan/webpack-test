@@ -1,8 +1,8 @@
-const path = require('path');
-const webpack = require('webpack');
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 // module.exports = {
 //     entry: {
@@ -85,16 +85,18 @@ module.exports = {
         }
     },
     resolve: {
-        //配置别名
+        // 配置别名
         alias: {
             jQuery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
         }
     },
     module: {
-        rules: [{
+        rules: [
+            {
                 test: /\.js$/,
                 exclude: /(node_modules)/,
-                use: [{
+                use: [
+                    {
                         loader: 'babel-loader',
                         options: {
                             presets: [
@@ -128,7 +130,8 @@ module.exports = {
                             transform: './css.transform.js'
                         }
                     },
-                    use: [{
+                    use: [
+                        {
                             loader: 'css-loader',
                             options: {
                                 // modules: true,
@@ -154,12 +157,13 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                use: [{
-                    loader: 'html-loader',
-                    options: {
-                        attrs: ['img:src']
-                    }
-                }]
+                use: [
+                    {
+                        loader: 'html-loader',
+                        options: {
+                            attrs: ['img:src']
+                        }
+                    }]
             },
             {
                 test: /\.(png|jpg|jpeg|gif)$/,
@@ -174,7 +178,7 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            name: "[name]-[hash:5].min.[ext]",
+                            name: '[name]-[hash:5].min.[ext]',
                             limit: 2000,
                             publicPath: './assets/imgs/',
                             outputPath: 'assets/imgs/'
@@ -194,15 +198,17 @@ module.exports = {
             },
             {
                 test: /\.(eot|woff2?|ttf|svg)$/,
-                use: [{
-                    loader: 'url-loader',
-                    options: {
-                        name: '[name]-[hash:5].[ext]',
-                        limit: 2000,
-                        publicPath: './assets/fonts/',
-                        outputPath: 'assets/fonts/'
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            name: '[name]-[hash:5].[ext]',
+                            limit: 2000,
+                            publicPath: './assets/fonts/',
+                            outputPath: 'assets/fonts/'
+                        }
                     }
-                }]
+                ]
             }
         ]
     },
