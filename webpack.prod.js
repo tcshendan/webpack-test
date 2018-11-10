@@ -2,6 +2,65 @@ const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
 
+const scriptLoader = [
+    {
+        loader: 'babel-loader'
+    }
+]
+
+const cssLoader = [
+    {
+        loader: 'css-loader'
+    },
+    {
+        loader: 'postcss-loader',
+        options: {
+            ident: 'postcss',
+            plugins: [
+                require('postcss-sprites')({
+                    spritePath: 'dist/assets/imgs/sprites'
+                })
+            ]
+        }
+    },
+    {
+        loader: 'less-loader'
+    }
+]
+
+const styleLoader = ExtractTextWebpackPlugin.extract({
+    fallback: {
+        loader: 'style-loader',
+        options: {
+            singleton: true,
+            transform: './css.transform.js'
+        }
+    },
+    use: cssLoader
+})
+
+const imageLoader = [
+    {
+        loader: 'url-loader',
+        options: {
+            name: '[name]-[hash:5].min.[ext]',
+            limit: 2000,
+            publicPath: './assets/imgs/',
+            outputPath: 'assets/imgs/'
+        }
+    },
+    {
+        loader: 'img-loader',
+        options: {
+            plugins: [
+                require('imagemin-pngquant')({
+                    quality: '80'
+                })
+            ]
+        }
+    }
+]
+
 module.exports = merge(common, {
     mode: 'production',
     devtool: 'source-map',
@@ -10,52 +69,11 @@ module.exports = merge(common, {
             {
                 test: /\.js$/,
                 exclude: /(node_modules)/,
-                use: [
-                    {
-                        loader: 'babel-loader'
-                    },
-                    {
-                        loader: 'eslint-loader',
-                        options: {
-                            formatter: require('eslint-friendly-formatter')
-                        }
-                    }
-                ]
+                use: scriptLoader
             },
             {
                 test: /\.less$/,
-                use: ExtractTextWebpackPlugin.extract({
-                    fallback: {
-                        loader: 'style-loader',
-                        options: {
-                            singleton: true,
-                            transform: './css.transform.js'
-                        }
-                    },
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                // modules: true,
-                                // localIdentName: '[path][name]_[local]_[hash:base64:5]'
-                            }
-                        },
-                        {
-                            loader: 'postcss-loader',
-                            options: {
-                                ident: 'postcss',
-                                plugins: [
-                                    require('postcss-sprites')({
-                                        spritePath: 'dist/assets/imgs/sprites'
-                                    })
-                                ]
-                            }
-                        },
-                        {
-                            loader: 'less-loader'
-                        }
-                    ]
-                })
+                use: styleLoader
             },
             {
                 test: /\.html$/,
@@ -68,34 +86,7 @@ module.exports = merge(common, {
             },
             {
                 test: /\.(png|jpg|jpeg|gif)$/,
-                use: [
-                    // {
-                    //     loader: 'file-loader',
-                    //     options: {
-                    //         publicPath: './assets/imgs/',
-                    //         outputPath: 'assets/imgs/'
-                    //     }
-                    // }
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            name: '[name]-[hash:5].min.[ext]',
-                            limit: 2000,
-                            publicPath: './assets/imgs/',
-                            outputPath: 'assets/imgs/'
-                        }
-                    },
-                    {
-                        loader: 'img-loader',
-                        options: {
-                            plugins: [
-                                require('imagemin-pngquant')({
-                                    quality: '80'
-                                })
-                            ]
-                        }
-                    }
-                ]
+                use: imageLoader
             },
             {
                 test: /\.(eot|woff2?|ttf|svg)$/,
@@ -117,4 +108,4 @@ module.exports = merge(common, {
             allChunks: false
         })
     ]
-});
+})
