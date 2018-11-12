@@ -18,6 +18,8 @@ const cssLoader = [
     {
         loader: 'css-loader',
         options: {
+            // modules: true,
+            // localIdentName: '[path][name]_[local]_[hash:base64:5]',
             sourceMap: true
         }
     },

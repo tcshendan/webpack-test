@@ -5,7 +5,7 @@ import common from './css/common.less'
 $('div').addClass('new')
 
 var app = document.getElementById('app')
-// app.innerHTML = '<div class="' + base.box + '"></div>';
+// app.innerHTML = `<div class="${base.box}"></div>`
 
 $.get('/comments/hotflow', {
     id: '4300473404209484',
